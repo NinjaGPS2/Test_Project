@@ -9,7 +9,19 @@ from tariff_engine import calculate_bill, detect_spike_and_validate, USD_EXCHANG
 from khqr_service import generate_bakong_khqr_payload, generate_qr_base64
 
 app = Flask(__name__)
-app.secret_key = 'electric_billing_cambodia_secure_key_2026'
+app.secret_key = os.environ.get('SECRET_KEY', 'electric_billing_cambodia_secure_key_2026')
+
+# Ensure database tables exist & pre-seeded admin user is present
+init_db()
+try:
+    _conn = get_db_connection()
+    _cust_count = _conn.execute("SELECT COUNT(*) FROM Customers").fetchone()[0]
+    _conn.close()
+    if _cust_count == 0:
+        from seed_data import seed
+        seed()
+except Exception:
+    pass
 
 def verify_password(stored_hash, provided_password):
     if not stored_hash:
@@ -796,10 +808,10 @@ def api_validate_reading():
     })
 
 if __name__ == '__main__':
-    init_db()
     import sys
     if sys.stdout is None:
         sys.stdout = open(os.devnull, 'w', encoding='utf-8')
     if sys.stderr is None:
         sys.stderr = open(os.devnull, 'w', encoding='utf-8')
-    app.run(host='0.0.0.0', port=5000, debug=False)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port, debug=False)
