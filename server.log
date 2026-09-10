@@ -5,5 +5,4 @@ WARNING: This is a development server. Do not use it in a production deployment.
  * Running on http://127.0.0.1:5000
  * Running on http://192.168.9.108:5000
 Press CTRL+C to quit
-127.0.0.1 - - [10/Sep/2026 12:34:42] "GET /login HTTP/1.1" 200 -
-127.0.0.1 - - [10/Sep/2026 12:53:38] "GET /login HTTP/1.1" 200 -
+127.0.0.1 - - [10/Sep/2026 13:11:03] "GET /login HTTP/1.1" 200 -
