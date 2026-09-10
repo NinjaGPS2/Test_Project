@@ -445,9 +445,25 @@ def customers():
     
     query += " ORDER BY c.customer_id DESC"
     customer_list = conn.execute(query, params).fetchall()
+
+    # Calculate summary metrics for the customer KPI ribbon
+    total_cust = conn.execute("SELECT COUNT(*) as c FROM Customers").fetchone()['c']
+    active_meters_count = conn.execute("SELECT COUNT(*) as c FROM Meters WHERE status = 'Active'").fetchone()['c']
+    res_count = conn.execute("SELECT COUNT(*) as c FROM Customers WHERE customer_type = 'Residential'").fetchone()['c']
+    comm_count = conn.execute("SELECT COUNT(*) as c FROM Customers WHERE customer_type = 'Commercial'").fetchone()['c']
+    ind_count = conn.execute("SELECT COUNT(*) as c FROM Customers WHERE customer_type = 'Industrial'").fetchone()['c']
+
     conn.close()
 
-    return render_template('customers.html', customers=customer_list, search=search, type_filter=type_filter)
+    return render_template('customers.html', 
+                           customers=customer_list, 
+                           search=search, 
+                           type_filter=type_filter,
+                           total_cust=total_cust,
+                           active_meters_count=active_meters_count,
+                           res_count=res_count,
+                           comm_count=comm_count,
+                           ind_count=ind_count)
 
 @app.route('/readings', methods=['GET', 'POST'])
 def readings():

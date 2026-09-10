@@ -1,0 +1,29 @@
+ * Serving Flask app 'app'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.9.108:5000
+Press CTRL+C to quit
+127.0.0.1 - - [10/Sep/2026 12:23:38] "GET /login HTTP/1.1" 200 -
+127.0.0.1 - - [10/Sep/2026 12:24:08] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [10/Sep/2026 12:24:08] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [10/Sep/2026 12:24:08] "GET /static/js/app.js HTTP/1.1" 304 -
+127.0.0.1 - - [10/Sep/2026 12:24:14] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [10/Sep/2026 12:24:14] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [10/Sep/2026 12:24:14] "GET /static/js/app.js HTTP/1.1" 304 -
+127.0.0.1 - - [10/Sep/2026 12:24:20] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [10/Sep/2026 12:24:20] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [10/Sep/2026 12:24:20] "GET /static/js/app.js HTTP/1.1" 304 -
+127.0.0.1 - - [10/Sep/2026 12:24:23] "GET /logout HTTP/1.1" 302 -
+127.0.0.1 - - [10/Sep/2026 12:24:23] "GET /login HTTP/1.1" 200 -
+127.0.0.1 - - [10/Sep/2026 12:24:23] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [10/Sep/2026 12:24:23] "GET /static/img/edc_logo.svg HTTP/1.1" 304 -
+127.0.0.1 - - [10/Sep/2026 12:24:35] "GET / HTTP/1.1" 302 -
+127.0.0.1 - - [10/Sep/2026 12:24:35] "GET /login HTTP/1.1" 200 -
+127.0.0.1 - - [10/Sep/2026 12:24:35] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [10/Sep/2026 12:24:35] "GET /static/img/edc_logo.svg HTTP/1.1" 304 -
+127.0.0.1 - - [10/Sep/2026 12:24:39] "POST /login HTTP/1.1" 302 -
+127.0.0.1 - - [10/Sep/2026 12:24:39] "GET /dashboard HTTP/1.1" 200 -
+127.0.0.1 - - [10/Sep/2026 12:24:39] "GET /static/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [10/Sep/2026 12:24:39] "GET /static/js/app.js HTTP/1.1" 304 -
